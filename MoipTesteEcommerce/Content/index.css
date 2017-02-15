@@ -255,6 +255,35 @@ p {
   }
 }
 
+.img-carousel {
+    margin: 0 auto;
+    max-width:250px;
+    max-height:250px;
+    width: auto;
+    height: auto;
+    position:relative;
+}
+
+#myCarousel {
+    margin-top: 50px;
+}
+
+.preco {
+    color: #FFB90F; 
+}
+
+.nome-produto {
+    color: #000000;
+}
+
+.legenda {
+    text-align:center;
+    padding-bottom: 50px;
+}
+
+#promo {
+    padding-top: 30px;
+}
 
 /*ON/OF SWITCH*/
 .onoffswitch {

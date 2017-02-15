@@ -1,31 +1,66 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Home";
 }
+<section id="promo">
+    <h2 style="text-align:center">
+        Vamos as compras!
+    </h2>
+</section>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" style="position:relative;z-index:1;">
+    <!-- Indicators -->
+    <ol class="carousel-indicators" style="z-index:1 !important">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <div class="img-carousel">
+                <img src="~/Images/Heinz.png" alt="Heinz">
+            </div>
+            <div class="legenda">
+                <p class="nome-produto">Ketchup Heinz</p>
+                <p class="preco">R$ 2,00</p>
+                <button type="button" class="btn btn-success">Comprar Agora</button>
+            </div> 
+        </div>
+
+        <div class="item">
+                <div class="img-carousel">
+                    <img src="~/Images/iphone5c.png" alt="Iphone5c">
+                </div>
+                <div class="legenda">
+                    <p class="nome-produto">Iphone 5c diversas cores</p>
+                    <p class="preco">R$ 1,00</p>
+                    <button type="button" class="btn btn-success">Comprar Agora</button>
+                </div> 
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+    <div class="col-sm-6"><img src="http://produto.blob.core.windows.net/produto/300x300/536.jpg" /></div>
+    <div class="col-sm-6"><img src="https://novodiacafes.pt/wp-content/uploads/2016/03/capDECAF-300x300.jpg" /></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6"><img src="https://www.ecovillequimica.com.br/site/wp-content/uploads/2014/07/4_Alvejante-sem-cloro-Vamix-White-300x300.png" /></div>
+    <div class="col-sm-6"><img src="http://www.pazzanibrindes.com.br/wp-content/uploads/2016/03/CANECA-CC001-300x300.jpg" /></div>
+</div>
+
+<div class="row">
+    <div class="col-sm-6"><img src="https://staticmccain.blob.core.windows.net/public/2016/04/mccain_rustica_embalagem.png" /></div>
+    <div class="col-sm-6"><img src="https://cdn.awsli.com.br/300x300/138/138431/produto/7988241/jogo-fifa-14-xbox-one-ingles-ab6433ff.jpg" /></div>
 </div>
