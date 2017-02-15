@@ -26,5 +26,10 @@ namespace MoipTesteEcommerce.Controllers
 
             return View();
         }
+
+        public ActionResult Product()
+        {
+            return View();
+        }
     }
 }

@@ -22,7 +22,7 @@
             </div>
             <div class="legenda">
                 <p class="nome-produto">Ketchup Heinz</p>
-                <p class="preco">R$ 2,00</p>
+                <p class="preco">R$ 1,00</p>
                 <button type="button" class="btn btn-success">Comprar Agora</button>
             </div> 
         </div>
@@ -51,16 +51,76 @@
 </div>
 
 <div class="row">
-    <div class="col-sm-6"><img src="http://produto.blob.core.windows.net/produto/300x300/536.jpg" /></div>
-    <div class="col-sm-6"><img src="https://novodiacafes.pt/wp-content/uploads/2016/03/capDECAF-300x300.jpg" /></div>
+    <div class="col-sm-6">
+        <div class="img-carousel">
+            <img src="http://produto.blob.core.windows.net/produto/300x300/536.jpg" />
+        </div>
+        <div class="legenda">
+            <p class="nome-produto">100% PURE WHEY</p>
+            <p class="preco">R$ 1,00</p>
+            <button type="button" class="btn btn-success">Comprar Agora</button>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="img-carousel">
+            <img src="https://novodiacafes.pt/wp-content/uploads/2016/03/capDECAF-300x300.jpg" />
+        </div>
+        <div class="legenda">
+            <p class="nome-produto">CAFÉ DECAF</p>
+            <p class="preco">R$ 1,00</p>
+            <button type="button" class="btn btn-success">Comprar Agora</button>
+        </div>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col-sm-6"><img src="https://www.ecovillequimica.com.br/site/wp-content/uploads/2014/07/4_Alvejante-sem-cloro-Vamix-White-300x300.png" /></div>
-    <div class="col-sm-6"><img src="http://www.pazzanibrindes.com.br/wp-content/uploads/2016/03/CANECA-CC001-300x300.jpg" /></div>
+    <div class="col-sm-6">
+        <div class="img-carousel">
+            <img src="https://www.ecovillequimica.com.br/site/wp-content/uploads/2014/07/4_Alvejante-sem-cloro-Vamix-White-300x300.png" />
+        </div>
+        <div class="legenda">
+            <p class="nome-produto">YAMI WHITE</p>
+            <p class="preco">R$ 1,00</p>
+            <button type="button" class="btn btn-success">Comprar Agora</button>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="img-carousel">
+            <img src="http://www.pazzanibrindes.com.br/wp-content/uploads/2016/03/CANECA-CC001-300x300.jpg" />
+        </div>
+        <div class="legenda">
+            <p class="nome-produto">PORTA CAFÉ</p>
+            <p class="preco">R$ 1,00</p>
+            <button type="button" class="btn btn-success">Comprar Agora</button>
+        </div>
+    </div>
 </div>
 
 <div class="row">
-    <div class="col-sm-6"><img src="https://staticmccain.blob.core.windows.net/public/2016/04/mccain_rustica_embalagem.png" /></div>
-    <div class="col-sm-6"><img src="https://cdn.awsli.com.br/300x300/138/138431/produto/7988241/jogo-fifa-14-xbox-one-ingles-ab6433ff.jpg" /></div>
+    <div class="col-sm-6">
+        <div class="img-carousel">
+            <img src="https://staticmccain.blob.core.windows.net/public/2016/04/mccain_rustica_embalagem.png" />
+        </div>
+        <div class="legenda">
+            <p class="nome-produto">MCCAIN RÚSTICAS</p>
+            <p class="preco">R$ 1,00</p>
+            <button type="button" class="btn btn-success" onclick="buy();">Comprar Agora</button>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="img-carousel">
+            <img src="https://cdn.awsli.com.br/300x300/138/138431/produto/7988241/jogo-fifa-14-xbox-one-ingles-ab6433ff.jpg" />
+        </div>
+        <div class="legenda">
+            <p class="nome-produto">FIFA 14 XBOX ONE</p>
+            <p class="preco">R$ 1,00</p>
+            <button type="button" class="btn btn-success" onclick="buy();">Comprar Agora</button>
+        </div>
+    </div>
 </div>
+
+<script>
+    function buy() {
+        window.location.href = '@Url.Action("ConfirmPayment", "Sale", new { id = 1 })';
+    }
+</script>

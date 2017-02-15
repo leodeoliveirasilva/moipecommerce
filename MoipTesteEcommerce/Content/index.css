@@ -257,11 +257,10 @@ p {
 
 .img-carousel {
     margin: 0 auto;
-    max-width:250px;
-    max-height:250px;
+    max-width:300px;
+    max-height:300px;
     width: auto;
     height: auto;
-    position:relative;
 }
 
 #myCarousel {
@@ -279,6 +278,8 @@ p {
 .legenda {
     text-align:center;
     padding-bottom: 50px;
+    padding-top: 50px;
+    left: 10px;
 }
 
 #promo {
