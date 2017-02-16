@@ -1,2 +1,18 @@
-﻿body {
+﻿#labelcarddata {
+    padding:0;
+    text-align:center;
+}
+
+#formcartao {
+    text-align:center;
+}
+
+#finalizarcompra {
+    margin: 0 auto;
+    text-align:center;
+    float: right;
+}
+
+#cancelarcompra {
+    float:left;
 }

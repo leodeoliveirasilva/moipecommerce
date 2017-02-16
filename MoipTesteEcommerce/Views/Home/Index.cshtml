@@ -114,13 +114,13 @@
         <div class="legenda">
             <p class="nome-produto">FIFA 14 XBOX ONE</p>
             <p class="preco">R$ 1,00</p>
-            <button type="button" class="btn btn-success" onclick="buy();">Comprar Agora</button>
+            <button type="button" class="btn btn-success" onclick="buy(1, 'FIFA 14 XBOX ONE', 'https://cdn.awsli.com.br/300x300/138/138431/produto/7988241/jogo-fifa-14-xbox-one-ingles-ab6433ff.jpg');">Comprar Agora</button>
         </div>
     </div>
 </div>
 
 <script>
-    function buy() {
-        window.location.href = '@Url.Action("ConfirmOrder", "Sale", new { id = 1, nome = "FIFA 14 XBOX ONE"})';
+    function buy(preco, nome, link) {
+        window.location.href = '@Url.Action("ConfirmOrder", "Sale")' + '?preco='+ preco +'&nome='+nome+'&link='+ link;
     }
 </script>

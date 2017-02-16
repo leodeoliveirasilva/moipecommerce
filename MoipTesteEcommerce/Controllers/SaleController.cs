@@ -20,9 +20,9 @@ namespace MoipTesteEcommerce.Controllers
         private IRequestLogger _RequestLogger = new SerializationUtility();
 
         // GET: Sale
-        public ActionResult ConfirmOrder()
+        public ActionResult ConfirmOrder(int preco, string nome, string link)
         {
-            var sale = new Sale() { Id = 1, Name = "FIFA 14 XBOX ONE", Price = 1 };
+            var sale = new Sale() { Id = 1, Name = nome, Price = preco, Url = link };
             return View(sale);
         }
 
@@ -44,14 +44,29 @@ namespace MoipTesteEcommerce.Controllers
             
         }
 
-        public ActionResult Payment()
+        public ActionResult Payment(string nome, int preco, string link, string orderid)
         {
-            return View();
+            var sale = new Sale() {
+                Id = 1,
+                Name = nome,
+                Price = 1, Url = link,
+                OrderId = orderid    
+            };
+            return View(sale);
         }
 
-        public ActionResult ConfirmPayment()
+        public ActionResult ConfirmPayment(string nome, int preco, string link, string orderid, string paymentid)
         {
-            return View();
+            var sale = new Sale()
+            {
+                Id = 1,
+                Name = nome,
+                Price = 1,
+                Url = link,
+                OrderId = orderid,
+                PaymentId = paymentid
+            };
+            return View(sale);
         }
 
     }

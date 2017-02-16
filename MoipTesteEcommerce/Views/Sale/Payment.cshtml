@@ -1,17 +1,21 @@
 ﻿@model MoipTesteEcommerce.Models.Sale
 
 @{
+    ViewBag.Title = "Payment";
+}
+
+@{
     var viewdatamessage = ViewData["Message"] as string;
+    ViewBag.Title = "Payment";
 }
 <br />
 <br />
 <br />
-<br />
-<br />
-<h2>Produto: @Model.Name</h2><br />
-<h2>Preço Total: R$ 1,00</h2><br />
 
 <script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
+
+<link href="~/Content/sale.css" rel="stylesheet" />
+
 <script type="text/javascript">
     function hash() {
           var cc = new Moip.CreditCard({
@@ -31,17 +35,63 @@
           }
     }
 </script>
-<h2>Insira seu dados de pagamentos, por favor:</h2><br />
-<form id="form1">
-    <input type="text" placeholder="Credit card number" id="number" /><br />
-    <input type="text" placeholder="CVC" id="cvc" /><br />
-    <input type="text" placeholder="Month" id="month" /><br />
-    <input type="text" placeholder="Year" id="year" /><br />
-    <input type="text" placeholder="Hash" id="encrypted_value" /><br /><br />
-</form>
 
-<button type="button" class="btn btn-success" id="encrypt" onclick="hash();">Success</button>
+<script>
+    function buy() {
+        if ($("#number").val() == ""){
+            alert('Preencha os dados do cartão, por favor!');
+            return false;
+        }
+        $.ajax({
+            url: 'https://sandbox.moip.com.br/v2/orders/'+document.getElementById("orderid").value+'/payments',
+            type: 'POST',
+            contentType: 'application/json',
+            authorization: '',
+            data: document.getElementById("data").value,
+            beforeSend: function(xhr){
+                xhr.setRequestHeader("Authorization", "Basic SkVSSzIzOENRT0tLVVM4M0xJS1NDOUhLOVlVT0RNWlk6NklDRjUxRlVKS1ZBTkhDUkVPOFVXSDNINFJOTk9OVTNES0IwWkNEVw==")
+            },
+        success: function(data) {
+            window.location.href = '@Url.Action("ConfirmPayment", "Sale")' + '?nome=' + document.getElementById("nome").value + '&preco=' + document.getElementById("preco").value + '&link=' + document.getElementById("link").value + '&orderid=' + document.getElementById("orderid").value + '&paymentid=' + data.id;
+        },
+            error: function () {
+                alert('Erro durante o pagamento');
+                window.location.href = '@Url.Action("Index", "Home")';
+            }
+        });
 
+    }
+</script>
+
+<div class="col-sm-12">
+    <div class="img-carousel">
+        <img src="@Model.Url" />
+    </div>
+    <div class="legenda">
+        <p class="nome-produto">@Model.Name</p>
+        <p class="preco">Total: R$ @Model.Price</p>
+    </div>
+
+    <h2 id="labelcarddata">Insira seu dados de pagamento, por favor:</h2><br />
+    <form id="formcartao">
+        <label for="number">Credit Card Number</label><br />
+        <input type="text" placeholder="Credit card number" id="number" /><br /><br />
+
+        <label for="cvc">CVC</label><br />
+        <input type="text" placeholder="CVC" id="cvc" /><br /><br />
+
+        <label for="month">Month</label><br />
+        <input type="text" placeholder="Month" id="month" /><br /><br />
+
+        <label for="year">Year</label><br />
+        <input type="text" placeholder="Year" id="year" /><br /><br />
+    </form>
+
+    <button type="button" class="btn btn-success" id="finalizarcompra" onclick="buy();">Confirmar Compra</button>
+    <button type="button" class="btn btn-danger" id="cancelarcompra">Cancelar Compra</button>
+    <br/>
+    <br/>
+</div>
 @*<textarea id="encrypted_value">
     </textarea>*@
 <textarea id="public_key" style="display:none;">
@@ -55,4 +105,34 @@
     rQIDAQAB
     -----END PUBLIC KEY-----
 </textarea>
+
+<textarea id="orderid" style="display:none;">@Model.OrderId</textarea>
+<textarea id="nome" style="display:none;">@Model.Name</textarea>
+<textarea id="preco" style="display:none;">@Model.Price</textarea>
+<textarea id="link" style="display:none;">@Model.Url</textarea>
+<textarea id="data" style="display:none;">
+    {
+    "installmentCount": 1,
+    "fundingInstrument": {
+    "method": "CREDIT_CARD",
+    "creditCard": {
+    "hash": "RIp/BJCOpYfB06Zp1UICGlrjJhXEn5CGCNMi8PImDYXpIL2T7HvG5o4Kz2vnDHlwnFOdrwCn22Q5LtHweaK1hCSdPZpBzL8sXGhFTktooX7SBbAMDyN4cjdTUenIzhdrViNSEZLadSzkjiqJheP7Yflbvu3+iT2ulwvh7zxDvrvacOmQCZNXxl8nC7sLQCBYbS93oU/H7JzqlP4WxF2waoDEhnhqsqDYYUbVo7s6AEFjF+RsJx6flwRZ9dKdqpSol7WWrnsk7ugzTuoOJkvVC7CS8D8ZUrTsBwBhsB2KSVBCmWYgL90tjOJ0NURC/RbcaWIbUpN1D+0m4foQ8JTnTA==",
+    "holder": {
+    "fullname": "Leonardo Silva",
+    "birthdate": "1995-05-10",
+    "taxDocument": {
+    "type": "CPF",
+    "number": "45063619894"
+    },
+    "phone": {
+    "countryCode": "55",
+    "areaCode": "11",
+    "number": "27455151"
+    }
+    }
+    }
+    }
+    }
+</textarea>
+
 

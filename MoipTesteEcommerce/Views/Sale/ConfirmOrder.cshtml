@@ -1,1 +1,87 @@
-﻿
+﻿@{ 
+    ViewBag.Title = "Confirmar";
+}
+
+@model MoipTesteEcommerce.Models.Sale
+
+<div class="col-sm-12">
+    <div class="img-carousel">
+        <img src="@Model.Url" />
+    </div>
+    <div class="legenda">
+        <p class="nome-produto">@Model.Name</p>
+        <p class="preco">Total: R$ @Model.Price</p>
+        <button type="button" class="btn btn-success" onclick="buy();">Confirmar Compra</button>
+    </div>
+</div>
+
+<textarea id="nome" style="display:none;">@Model.Name</textarea>
+<textarea id="preco" style="display:none;">@Model.Price</textarea>
+<textarea id="link" style="display:none;">@Model.Url</textarea>
+<textarea id="data" style="display:none;">
+    {
+    "ownId": "seu_identificador_proprio",
+    "amount": {
+    "currency": "BRL",
+    "subtotals": {
+    "shipping": 1000
+    }
+    },
+    "items": [
+    {
+    "product": "Descrição do pedido",
+    "quantity": 1,
+    "detail": "Mais info...",
+    "price": 1000
+    }
+    ],
+    "customer": {
+    "ownId": "seu_identificador_proprio_de_cliente",
+    "fullname": "Jose Silva",
+    "email": "nome@email.com",
+    "birthDate": "1988-12-30",
+    "taxDocument": {
+    "type": "CPF",
+    "number": "22222222222"
+    },
+    "phone": {
+    "countryCode": "55",
+    "areaCode": "11",
+    "number": "66778899"
+    },
+    "shippingAddress": {
+    "street": "Avenida Faria Lima",
+    "streetNumber": 2927,
+    "complement": 8,
+    "district": "Itaim",
+    "city": "Sao Paulo",
+    "state": "SP",
+    "country": "BRA",
+    "zipCode": "01234000"
+    }
+    }
+    }
+</textarea>
+
+<script>
+    function buy() {
+        $.ajax({
+            url: 'https://sandbox.moip.com.br/v2/orders',
+            type: 'POST',
+            contentType: 'application/json',
+            authorization: '',
+            data: document.getElementById("data").value,
+            beforeSend: function(xhr){
+                xhr.setRequestHeader("Authorization", "Basic SkVSSzIzOENRT0tLVVM4M0xJS1NDOUhLOVlVT0RNWlk6NklDRjUxRlVKS1ZBTkhDUkVPOFVXSDNINFJOTk9OVTNES0IwWkNEVw==")
+            },
+        success: function(data) {
+            window.location.href = '@Url.Action("Payment", "Sale")' + '?nome=' + document.getElementById("nome").value + '&preco=' + document.getElementById("preco").value + '&link=' + document.getElementById("link").value + '&orderid=' + data.id;
+        },
+            error: function () {
+                alert('Erro durante a criação do pedido');
+                window.location.href = '@Url.Action("Index", "Home")';
+            }
+        });
+
+    }
+</script>
