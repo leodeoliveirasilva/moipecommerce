@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MoipTesteEcommerce.Models.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +9,7 @@ namespace MoipTesteEcommerce.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Index()
         {
             return View();
@@ -29,7 +31,10 @@ namespace MoipTesteEcommerce.Controllers
 
         public ActionResult Product()
         {
+            
             return View();
         }
+
+
     }
 }

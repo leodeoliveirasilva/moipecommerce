@@ -79,7 +79,6 @@ c:\users\user\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTeste
 c:\users\user\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 c:\users\user\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\obj\Debug\MoipTesteEcommerce.dll
 c:\users\user\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\obj\Debug\MoipTesteEcommerce.pdb
-C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\obj\Debug\MoipTesteEcommerce.csprojResolveAssemblyReference.cache
 C:\workspace\moipecommerce\moipecommerce\MoipTesteEcommerce\bin\ApplicationInsights.config
 C:\workspace\moipecommerce\moipecommerce\MoipTesteEcommerce\bin\roslyn\csc.exe
 C:\workspace\moipecommerce\moipecommerce\MoipTesteEcommerce\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -162,3 +161,14 @@ C:\workspace\moipecommerce\moipecommerce\MoipTesteEcommerce\bin\Microsoft.Owin.S
 C:\workspace\moipecommerce\moipecommerce\MoipTesteEcommerce\obj\Debug\MoipTesteEcommerce.csprojResolveAssemblyReference.cache
 C:\workspace\moipecommerce\moipecommerce\MoipTesteEcommerce\obj\Debug\MoipTesteEcommerce.dll
 C:\workspace\moipecommerce\moipecommerce\MoipTesteEcommerce\obj\Debug\MoipTesteEcommerce.pdb
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\Microsoft.AspNet.WebHooks.Common.dll
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\Microsoft.AspNet.WebHooks.Receivers.Azure.dll
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\Microsoft.AspNet.WebHooks.Receivers.dll
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\System.Net.Http.Formatting.dll
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\System.Web.Http.dll
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\Microsoft.AspNet.WebHooks.Common.xml
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\Microsoft.AspNet.WebHooks.Receivers.xml
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\Microsoft.AspNet.WebHooks.Receivers.Azure.xml
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\System.Net.Http.Formatting.xml
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\bin\System.Web.Http.xml
+C:\Users\User\documents\visual studio 2015\Projects\MoipTesteEcommerce\MoipTesteEcommerce\obj\Debug\MoipTesteEcommerce.csprojResolveAssemblyReference.cache

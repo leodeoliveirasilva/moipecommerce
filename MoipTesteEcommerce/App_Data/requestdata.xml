@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!--List of received requests-->
+<Requests>
+  <Request>
+    <Headers>
+      <Cache-Control>no-cache</Cache-Control>
+      <Connection>keep-alive</Connection>
+      <Content-Length>21</Content-Length>
+      <Content-Type>application/json</Content-Type>
+      <Accept>*/*</Accept>
+      <Accept-Encoding>gzip, deflate, br</Accept-Encoding>
+      <Accept-Language>pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4</Accept-Language>
+      <Host>localhost:2978</Host>
+      <User-Agent>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36</User-Agent>
+      <Postman-Token>8a187829-a517-5a66-cca4-713eb73b5075</Postman-Token>
+      <Origin>chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop</Origin>
+    </Headers>
+    <QueryString />
+    <Form />
+    <InputStream>{"status":"success"}
+</InputStream>
+  </Request>
+  <Request>
+    <Headers>
+      <Cache-Control>no-cache</Cache-Control>
+      <Connection>keep-alive</Connection>
+      <Content-Length>21</Content-Length>
+      <Content-Type>application/json</Content-Type>
+      <Accept>*/*</Accept>
+      <Accept-Encoding>gzip, deflate, br</Accept-Encoding>
+      <Accept-Language>pt-BR,pt;q=0.8,en-US;q=0.6,en;q=0.4</Accept-Language>
+      <Host>localhost:2978</Host>
+      <User-Agent>Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36</User-Agent>
+      <Postman-Token>9291c4c3-05c8-3a1c-31a2-969a6b3305ec</Postman-Token>
+      <Origin>chrome-extension://fhbjgbiflinjbdggehcddcbncdddomop</Origin>
+    </Headers>
+    <QueryString />
+    <Form />
+    <InputStream>{"status":"success"}
+</InputStream>
+  </Request>
+</Requests>
