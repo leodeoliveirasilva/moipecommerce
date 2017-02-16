@@ -13,5 +13,6 @@ namespace MoipTesteEcommerce.Models
         public string Url { get; set; }
         public string OrderId = "";
         public string PaymentId = "";
+        public string Status = "";
     }
 }

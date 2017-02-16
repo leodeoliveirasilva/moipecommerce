@@ -89,9 +89,26 @@ namespace MoipTesteEcommerce.WebHook
             var xDoc = LoadRequestData(HttpContext.Current.Server.MapPath(REQUEST_DATA_FILEPATH));
 
             //then find all saved requests that contained an element called "commit" within the posted form
-            return from xel in xDoc.Descendants("Request").Descendants("InputStream")
+            return from xel in xDoc.Descendants("Requests").Descendants("Request").Descendants("InputStream")
                    select xel.Value;
         }
+
+
+        public static bool OrderPaid(string orderid)
+        {
+
+                IEnumerable<string> teste = GetSavedBeanstalkWebHooks();
+
+                foreach (string data in teste)
+                {
+                    if (data.Contains(orderid) && data.Contains("ORDER.PAID"))
+                        return true;
+                }
+            return false;
+        }
+
+       
+
 
         public static TesteModels GetChangelistFromJsonString(string json)
         {

@@ -1,68 +1,39 @@
-﻿@model MoipTesteEcommerce.Models.Sale
-
-@{
-    var viewdatamessage = ViewData["Message"] as string;
+﻿@{
+    ViewBag.Title = "ConfirmPayment";
 }
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<h2>@Model.Name</h2>
 
-<script type="text/javascript" src="//assets.moip.com.br/v2/moip.min.js"></script>
-<script type="text/javascript">
-    function hash() {
-        alert(document.getElementById("public_key").value);
-        alert(document.getElementById("number").value);
-          var cc = new Moip.CreditCard({
-            number  : $("#number").val(),
-            cvc     : $("#cvc").val(),
-            expMonth: $("#month").val(),
-            expYear : $("#year").val(),
-            pubKey  : $("#public_key").val()
-          });
-          console.log(cc);
-          if( cc.isValid()){
-            $("#encrypted_value").val(cc.hash());
-          }
-          else{
-            $("#encrypted_value").val('');
-            alert('Invalid credit card. Verify parameters: number, cvc, expiration Month, expiration Year');
-          }
+@model MoipTesteEcommerce.Models.Sale
+
+<link href="~/Content/sale.css" rel="stylesheet" />
+
+ <div style="text-align:center">
+    <h1>@Model.Status</h1>
+    <h1>@Model.PaymentId</h1>
+    <h1>@Model.OrderId</h1>
+</div>
+<textarea id="orderid" style="display:none;">@Model.OrderId</textarea>
+<textarea id="nome" style="display:none;">@Model.Name</textarea>
+<textarea id="preco" style="display:none;">@Model.Price</textarea>
+<textarea id="link" style="display:none;">@Model.Url</textarea>
+<textarea id="paymentid" style="display:none;">@Model.PaymentId</textarea>
+
+<button type="button" class="btn btn-success" id="finalizarcompra" onclick="buy();">Atualizar</button>
+<button type="button" class="btn btn-danger" id="cancelarcompra" onclick="voltar();">Voltar</button>
+
+<a href="#" id="ancora"></a>
+
+<script>
+    window.location.href='#ancora';
+</script>
+
+<script>
+    function buy() {
+        window.location.href = '@Url.Action("ConfirmPayment", "Sale")' + '?nome=' + document.getElementById("nome").value + '&preco=' + document.getElementById("preco").value + '&link=' + document.getElementById("link").value + '&orderid=' + document.getElementById("orderid").value + '&paymentid=' + document.getElementById("paymentid").value;
     }
 </script>
 
-<form id="form1">
-    <input type="text" placeholder="Credit card number" id="number" />
-    <input type="text" placeholder="CVC" id="cvc" />
-    <input type="text" placeholder="Month" id="month" />
-    <input type="text" placeholder="Year" id="year" />
-    <input type="text" placeholder="Hash" id="encrypted_value" />
-</form>
-
-<button type="button" class="btn btn-success" id="encrypt" onclick="hash();">Success</button>
-
-<textarea id="public_key" style="display:none;">
-    -----BEGIN PUBLIC KEY-----
-    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgu/KOlyC7T/cnME5GsV8
-    eli/+p56GbgXd42WdELWt10vrWsWQElY3Q2B2DMMxtYwOOd/PJ5+/+SmERoWe1DO
-    BSXHBDq37/QUg3nWBuHThr8r2nBPI0v5iuz7QpzV2aP8wV7p8VZFZlt+Xdhsnwz8
-    ACw3A/B5MPGCl98H36yrIHd4U+VxGRH0kUqmHMQnCji3F+Yc1/wNfdZo9Ny0oqqx
-    ljCY8yEl8fdiVKbCM4dOBF8UyAcPCm6zamRUt1tdSQ0L9yELGc+95dTF7589jm1F
-    hAyIev49VLcbPRz8seP2uBKrCFrOjn9gtByFSnhEwke1KV7+yBcXt/hORc0mtkWF
-    rQIDAQAB
-    -----END PUBLIC KEY-----
-</textarea>
-
+<script>
+    function voltar() {
+        window.location.href = '@Url.Action("Index", "Home")';
+    }
+</script>

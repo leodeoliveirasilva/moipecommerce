@@ -1,7 +1,39 @@
 ﻿@{
     ViewBag.Title = "ConfirmPayment";
 }
+
 @model MoipTesteEcommerce.Models.Sale
-<h1>SUCCESS</h1>
-<h1>@Model.PaymentId</h1>
-<h1>@Model.OrderId</h1>
+
+<link href="~/Content/sale.css" rel="stylesheet" />
+
+ <div style="text-align:center">
+    <h1>@Model.Status</h1>
+    <h1>@Model.PaymentId</h1>
+    <h1>@Model.OrderId</h1>
+</div>
+<textarea id="orderid" style="display:none;">@Model.OrderId</textarea>
+<textarea id="nome" style="display:none;">@Model.Name</textarea>
+<textarea id="preco" style="display:none;">@Model.Price</textarea>
+<textarea id="link" style="display:none;">@Model.Url</textarea>
+<textarea id="paymentid" style="display:none;">@Model.PaymentId</textarea>
+
+<button type="button" class="btn btn-success" id="finalizarcompra" onclick="buy();">Atualizar</button>
+<button type="button" class="btn btn-danger" id="cancelarcompra" onclick="voltar();">Voltar</button>
+
+<a href="#" id="ancora"></a>
+
+<script>
+    window.location.href='#ancora';
+</script>
+
+<script>
+    function buy() {
+        window.location.href = '@Url.Action("ConfirmPayment", "Sale")' + '?nome=' + document.getElementById("nome").value + '&preco=' + document.getElementById("preco").value + '&link=' + document.getElementById("link").value + '&orderid=' + document.getElementById("orderid").value + '&paymentid=' + document.getElementById("paymentid").value;
+    }
+</script>
+
+<script>
+    function voltar() {
+        window.location.href = '@Url.Action("Index", "Home")';
+    }
+</script>
